@@ -1,10 +1,10 @@
 # final-o
 
+🔗 **Live:** [bdcn-orgcom-final.netlify.app](https://bdcn-orgcom-final.netlify.app)
+
 ## Logo
--pa upload nalang nung logo sa loob ng logo folder ang name ng logo BDCN.png.
--note na make sure png or svg basta kaya transparent yung bg nung logo.
-
-
+- pa upload nalang nung logo sa loob ng logo folder ang name ng logo BDCN.png.
+- note na make sure png or svg basta kaya transparent yung bg nung logo.
 
 ## 📁 Folder Structure
 
@@ -13,6 +13,3 @@ final-o/
 │
 ├── logo/
     └── BDCN.png          ← 📌
-
-
-```
