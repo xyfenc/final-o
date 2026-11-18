@@ -1,4 +1,4 @@
-# final-o
+# final-orgcomm
 
 🔗 **Live:** [bdcn-orgcom-final.netlify.app](https://bdcn-orgcom-final.netlify.app)
 
