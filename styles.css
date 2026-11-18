@@ -10,8 +10,8 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 
 /* header */
 .site-header{position:fixed;inset:0 0 auto;z-index:10;height:var(--head);display:flex;align-items:center;gap:18px;padding:0 3vw;background:var(--paper);border-bottom:1px solid var(--line)}
-.brand-mark{position:relative;width:78px;height:46px;padding:4px;border:1px solid var(--line);border-radius:10px;background:#fffdf8;flex:none}
-.brand-mark-project{border-color:#e2c91a;background:#f8df1f}
+.brand-mark{position:relative;width:78px;height:58px;padding:0;border:none;border-radius:0;background:transparent;flex:none}
+.brand-mark-project{border:none;background:transparent}
 .brand-mark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain}
 .brand-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--title);font:800 13px "Space Grotesk",sans-serif;letter-spacing:.08em}
 .brand-copy{flex:1;text-align:center}
@@ -116,7 +116,7 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 @media(max-width:650px){
 :root{--head:70px}
 .site-header{gap:10px;padding:0 12px}
-.brand-mark{width:50px;height:38px}
+.brand-mark{width:50px;height:45px}
 .brand-copy h1{font-size:17px}.brand-copy p{font-size:11px}
 .app-shell{display:flex;flex-direction:column}
 .rail{padding:8px 10px;flex:none}
@@ -139,8 +139,8 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 
 /* dark theme */
 :root[data-theme="dark"]{color-scheme:dark;--cream:#0e1424;--paper:#151c32;--ink:#e3e8f2;--muted:#a6b0c5;--line:#2a3555;--title:#eef1f8;--coral-d:#f09580}
-[data-theme="dark"] .brand-mark{background:#fffdf8}
-[data-theme="dark"] .brand-fallback{color:#17213b}
+[data-theme="dark"] .brand-mark{background:transparent}
+[data-theme="dark"] .brand-fallback{color:var(--title)}
 [data-theme="dark"] .text-border{color:#6d7890}
 [data-theme="dark"] .rail{border-right:1px solid var(--line)}
 [data-theme="dark"] .org-node{background:#1d2742;border-color:#4a3a45}
