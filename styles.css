@@ -11,7 +11,7 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 /* header */
 .site-header{position:fixed;inset:0 0 auto;z-index:10;height:var(--head);display:flex;align-items:center;gap:18px;padding:0 3vw;background:var(--paper);border-bottom:1px solid var(--line)}
 .brand-mark{position:relative;width:78px;height:58px;padding:0;border:none;border-radius:0;background:transparent;flex:none}
-.brand-mark-project{border:none;background:transparent}
+.brand-mark-project{width:110px;height:70px;border:none;background:transparent}
 .brand-mark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain}
 .brand-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--title);font:800 13px "Space Grotesk",sans-serif;letter-spacing:.08em}
 .brand-copy{flex:1;text-align:center}
@@ -118,6 +118,7 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .site-header{gap:10px;padding:0 12px}
 .brand-mark{width:50px;height:45px}
 .brand-copy h1{font-size:17px}.brand-copy p{font-size:11px}
+.brand-mark-project{width:75px;height:55px}
 .app-shell{display:flex;flex-direction:column}
 .rail{padding:8px 10px;flex:none}
 .rail-intro,.rail-foot{display:none}
