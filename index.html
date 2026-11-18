@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Built by xyfenc | github.com/xyfenc -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="xyfenc">
     <meta name="description" content="Project BDCN - Organizational Communication">
     <title>Project BDCN | Organizational Communication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,20 +31,17 @@
     </header>
 
     <div class="app-shell">
-        <aside class="sidebar">
-            <div class="sidebar-intro">
-                <span class="sidebar-kicker">Explore</span>
-                <p>Our organizational communication project</p>
-            </div>
+        <aside class="rail">
+            <div class="rail-intro"><strong>Explore</strong><p>Our organizational communication project</p></div>
             <nav aria-label="Main navigation">
-                <button class="nav-button active" data-page="home" aria-current="page"><span class="nav-number">00</span>Home</button>
-                <button class="nav-button" data-page="org-chart"><span class="nav-number">01</span>Org Chart</button>
-                <button class="nav-button" data-page="theory"><span class="nav-number">02</span>Theory</button>
-                <button class="nav-button" data-page="reflections"><span class="nav-number">03</span>Reflections</button>
-                <button class="nav-button" data-page="company-details"><span class="nav-number">04</span>Company Details</button>
-                <button class="nav-button" data-page="about-us"><span class="nav-number">05</span>About Us</button>
+                <button class="nav-button active" data-page="home" aria-current="page">Home</button>
+                <button class="nav-button" data-page="org-chart">Org Chart</button>
+                <button class="nav-button" data-page="theory">Theory</button>
+                <button class="nav-button" data-page="reflections">Reflections</button>
+                <button class="nav-button" data-page="company-details">Company Details</button>
+                <button class="nav-button" data-page="about-us">About Us</button>
             </nav>
-            <div class="sidebar-footer">Orgcom<br><span>2026</span></div>
+            <div class="rail-foot">Orgcom 2026</div>
         </aside>
 
         <main class="main-content">
@@ -54,13 +53,7 @@
                     <button class="primary-button" data-page-link="org-chart">Explore our structure <span>↗</span></button>
                 </div>
                 <div class="video-card">
-                    <div class="video-heading">
-                        <div>
-                            <span class="section-label">Featured media</span>
-                            <h3>Project introduction</h3>
-                        </div>
-                        <span class="video-tag">VIDEO</span>
-                    </div>
+                    <div class="video-heading"><h3>Project introduction</h3></div>
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw" title="Project BDCN Introduction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
@@ -132,7 +125,8 @@
         </main>
     </div>
 
-    <footer class="site-footer"><p>Project BDCN <span>|</span> Copyright 2026 <span>|</span> Organizational Communication</p></footer>
+    <footer class="site-footer"><button class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button><p>Project BDCN <span>|</span> Copyright 2026 <span>|</span> Organizational Communication</p></footer>
     <script src="script.js"></script>
+    <!-- xyfenc -->
 </body>
 </html>

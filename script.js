@@ -1,68 +1,54 @@
-const navigationButtons = document.querySelectorAll(".nav-button");
-const pagePanels = document.querySelectorAll("[data-page-panel]");
-const backButtons = document.querySelectorAll("[data-back]");
-const pageLinks = document.querySelectorAll("[data-page-link]");
-const mainContent = document.querySelector(".main-content");
+// Built by xyfenc | github.com/xyfenc
+const navButtons = document.querySelectorAll(".nav-button");
+const panels = document.querySelectorAll("[data-page-panel]");
+const main = document.querySelector(".main-content");
 const textBorder = document.querySelector(".text-border");
+const ids = [...navButtons].map((b) => b.dataset.page);
 
 function updateTextBorder() {
     const names = "DELCANO=CUMMINS=NOORA=BALMACEDA=";
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
+    const context = document.createElement("canvas").getContext("2d");
     context.font = getComputedStyle(textBorder).font;
     const textWidth = context.measureText(names).width || 30;
-    const repetitions = Math.ceil(window.innerWidth / textWidth) + 2;
-    textBorder.textContent = names.repeat(repetitions);
+    textBorder.textContent = names.repeat(Math.ceil(window.innerWidth / textWidth) + 2);
 }
 
-function showPage(pageId) {
-    const targetPanel = document.getElementById(pageId);
-    if (!targetPanel) {
-        return;
-    }
-
-    pagePanels.forEach((panel) => {
-        panel.hidden = panel !== targetPanel;
+function showPage(id, updateHash = true) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    const index = ids.indexOf(id);
+    panels.forEach((p) => { p.hidden = p !== target; });
+    navButtons.forEach((b, i) => {
+        const active = i === index;
+        b.classList.toggle("active", active);
+        active ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current");
     });
-
-    navigationButtons.forEach((button) => {
-        const isActive = button.dataset.page === pageId;
-        button.classList.toggle("active", isActive);
-        if (isActive) {
-            button.setAttribute("aria-current", "page");
-        } else {
-            button.removeAttribute("aria-current");
-        }
-    });
-
-    mainContent.scrollTop = 0;
+    main.scrollTop = 0;
+    if (updateHash && location.hash !== "#" + id) history.pushState(null, "", "#" + id);
 }
 
-navigationButtons.forEach((button) => {
-    button.addEventListener("click", () => showPage(button.dataset.page));
-});
-
-backButtons.forEach((button) => {
-    button.addEventListener("click", () => showPage("home"));
-});
-
-pageLinks.forEach((button) => {
-    button.addEventListener("click", () => showPage(button.dataset.pageLink));
-});
-
+navButtons.forEach((b) => b.addEventListener("click", () => showPage(b.dataset.page)));
+document.querySelectorAll("[data-back]").forEach((b) => b.addEventListener("click", () => showPage("home")));
+document.querySelectorAll("[data-page-link]").forEach((b) => b.addEventListener("click", () => showPage(b.dataset.pageLink)));
+window.addEventListener("popstate", () => showPage(location.hash.slice(1) || "home", false));
+showPage(location.hash.slice(1) || "home", false);
 updateTextBorder();
 window.addEventListener("resize", updateTextBorder);
-showPage("home");
 
-document.querySelectorAll(".brand-mark img").forEach((image) => {
-    const hideMissingImage = () => {
-        if (!image.naturalWidth) {
-            image.hidden = true;
-        }
-    };
-
-    image.addEventListener("error", hideMissingImage);
-    if (image.complete) {
-        hideMissingImage();
-    }
+document.querySelectorAll(".brand-mark img").forEach((img) => {
+    const hide = () => { if (!img.naturalWidth) img.hidden = true; };
+    img.addEventListener("error", hide);
+    if (img.complete) hide();
 });
+
+const themeToggle = document.getElementById("theme-toggle");
+function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+    themeToggle.setAttribute("aria-pressed", theme === "dark");
+    try { localStorage.setItem("bdcn-theme", theme); } catch (e) {}
+}
+let savedTheme = "light";
+try { savedTheme = localStorage.getItem("bdcn-theme") || "light"; } catch (e) {}
+setTheme(savedTheme);
+themeToggle.addEventListener("click", () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
