@@ -53,3 +53,16 @@ pageLinks.forEach((button) => {
 updateTextBorder();
 window.addEventListener("resize", updateTextBorder);
 showPage("home");
+
+document.querySelectorAll(".brand-mark img").forEach((image) => {
+    const hideMissingImage = () => {
+        if (!image.naturalWidth) {
+            image.hidden = true;
+        }
+    };
+
+    image.addEventListener("error", hideMissingImage);
+    if (image.complete) {
+        hideMissingImage();
+    }
+});

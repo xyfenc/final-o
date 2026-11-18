@@ -14,6 +14,13 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     min-height: 100vh;
     background: var(--cream);
@@ -38,10 +45,11 @@ button { font: inherit; }
     border-bottom: 1px solid var(--line);
 }
 
-.brand-mark { width: 104px; height: 66px; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); }
+.brand-mark { position: relative; width: 104px; height: 66px; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); }
 .brand-mark-umak { background: #fffdf8; }
 .brand-mark-project { border-color: #e2c91a; background: #f8df1f; }
-.brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+.brand-mark img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
+.brand-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--navy); font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 800; letter-spacing: .08em; }
 .brand-copy { text-align: center; }
 .brand-copy h1, .page-title, .home-copy h2 { font-family: "Space Grotesk", sans-serif; }
 .brand-copy h1 { color: var(--navy); font-size: clamp(22px, 3vw, 34px); letter-spacing: .13em; }
@@ -49,7 +57,14 @@ button { font: inherit; }
 .eyebrow { margin-bottom: 5px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 
 .text-border { position: absolute; right: 0; bottom: 0; left: 0; display: block; width: 100%; height: 3px; overflow: hidden; color: var(--navy); font-size: 3px; font-weight: 900; letter-spacing: 0; line-height: 3px; text-align: center; text-shadow: .25px 0 currentColor, -.25px 0 currentColor; white-space: nowrap; }
-.app-shell { display: grid; grid-template-columns: 252px minmax(0, 1fr); height: calc(100vh - var(--header-height) - var(--footer-height)); margin-top: var(--header-height); margin-bottom: var(--footer-height); overflow: hidden; }
+.app-shell {
+    position: fixed;
+    inset: var(--header-height) 0 var(--footer-height);
+    display: grid;
+    grid-template-columns: 252px minmax(0, 1fr);
+    min-height: 0;
+    overflow: hidden;
+}
 .sidebar { display: flex; flex-direction: column; padding: 38px 22px 24px; background: var(--navy); color: #fff; }
 .sidebar-intro { padding: 0 10px 32px; border-bottom: 1px solid rgba(255,255,255,.13); }
 .sidebar-kicker, .section-label { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
@@ -62,10 +77,29 @@ button { font: inherit; }
 .nav-button.active .nav-number { color: var(--coral); }
 .sidebar-footer { margin-top: auto; padding: 24px 10px 0; color: #8490a8; font-size: 11px; line-height: 1.7; }
 .sidebar-footer span { color: var(--coral); }
-.main-content { display: flex; min-width: 0; padding: 38px clamp(18px, 4vw, 65px); overflow-y: auto; }
-.content-card { width: min(1050px, 100%); min-height: 100%; margin: 0 auto; padding: clamp(25px, 4vw, 54px); border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: 0 14px 40px rgba(23,33,59,.06); }
+.main-content {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+    min-height: 0;
+    padding: 38px clamp(18px, 4vw, 65px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.content-card {
+    width: min(1050px, 100%);
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    padding: clamp(25px, 4vw, 54px);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--paper);
+    box-shadow: 0 14px 40px rgba(23,33,59,.06);
+    overflow-wrap: anywhere;
+}
 .content-card:not(.home-content) { min-height: auto; }
-.home-content { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; flex: 1; gap: clamp(30px, 5vw, 72px); }
+.home-content { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; flex: 1; min-height: 100%; gap: clamp(30px, 5vw, 72px); }
 .home-copy h2 { margin: 12px 0 18px; color: var(--navy); font-size: clamp(32px, 5vw, 60px); line-height: 1.02; letter-spacing: -.05em; }
 .home-copy h2 em { color: var(--coral-dark); font-style: normal; }
 .home-copy > p { max-width: 430px; color: var(--muted); font-size: 15px; line-height: 1.8; }
@@ -141,7 +175,7 @@ code { color: #fff; }
     .brand-copy p:last-child { font-size: 9px; letter-spacing: .08em; }
     .eyebrow { font-size: 8px; }
     .text-border { height: 3px; font-size: 3px; line-height: 3px; }
-    .app-shell { display: flex; flex-direction: column; height: calc(100vh - var(--header-height) - var(--footer-height)); }
+    .app-shell { display: flex; flex-direction: column; }
     .sidebar { padding: 10px 12px; }
     .sidebar-intro, .sidebar-footer { display: none; }
     .sidebar nav { flex-direction: row; gap: 5px; overflow-x: auto; padding: 0; }
