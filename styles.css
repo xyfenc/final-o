@@ -10,7 +10,8 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 
 /* header */
 .site-header{position:fixed;inset:0 0 auto;z-index:10;height:var(--head);display:flex;align-items:center;gap:18px;padding:0 3vw;background:var(--paper);border-bottom:1px solid var(--line)}
-.brand-mark{position:relative;width:98px;height:78px;padding:0;border:none;border-radius:0;background:transparent;flex:none}
+.brand-mark{position:relative;width:78px;height:58px;padding:0;border:none;border-radius:0;background:transparent;flex:none}
+.brand-mark2{position:relative;width:98px;height:78px;padding:0;border:none;border-radius:0;background:transparent;flex:none}
 .brand-mark-project{border:none;background:transparent}
 .brand-mark img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain}
 .brand-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--title);font:800 13px "Space Grotesk",sans-serif;letter-spacing:.08em}
