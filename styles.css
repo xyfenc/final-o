@@ -60,7 +60,11 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 
 /* org chart */
 .org-dialog{width:min(920px,calc(100vw - 32px));max-height:calc(100vh - 32px);margin:auto;padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);overflow:auto}
+.org-dialog[open]{animation:org-dialog-in 220ms cubic-bezier(.2,.8,.2,1) both}
 .org-dialog::backdrop{background:rgb(10 16 31 / 68%)}
+.org-dialog[open]::backdrop{animation:org-backdrop-in 220ms ease-out both}
+@keyframes org-dialog-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes org-backdrop-in{from{opacity:0}to{opacity:1}}
 .org-dialog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
 .org-dialog-heading .page-title{margin-top:0}
 .org-dialog-close{display:grid;width:36px;height:36px;place-items:center;flex:none;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--title);cursor:pointer;font-size:25px;line-height:1}
@@ -137,7 +141,7 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .video-card{box-shadow:6px 6px 0 var(--coral)}
 .org-dialog{padding:20px}
 }
-@media(prefers-reduced-motion:reduce){.content-card{animation:none}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.content-card{animation:none}.org-dialog[open],.org-dialog[open]::backdrop{animation:none}*{transition:none!important}}
 
 /* theme toggle */
 .theme-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);padding:5px 12px;border:1px solid #3a4868;border-radius:999px;background:transparent;color:#cbd2e0;cursor:pointer;font-size:12px;transition:background .2s ease,color .2s ease}
