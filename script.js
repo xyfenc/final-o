@@ -34,21 +34,3 @@ window.addEventListener("popstate", () => showPage(location.hash.slice(1) || "ho
 showPage(location.hash.slice(1) || "home", false);
 updateTextBorder();
 window.addEventListener("resize", updateTextBorder);
-
-document.querySelectorAll(".brand-mark img").forEach((img) => {
-    const hide = () => { if (!img.naturalWidth) img.hidden = true; };
-    img.addEventListener("error", hide);
-    if (img.complete) hide();
-});
-
-const themeToggle = document.getElementById("theme-toggle");
-function setTheme(theme) {
-    document.documentElement.dataset.theme = theme;
-    themeToggle.textContent = theme === "dark" ? "Light mode" : "Dark mode";
-    themeToggle.setAttribute("aria-pressed", theme === "dark");
-    try { localStorage.setItem("bdcn-theme", theme); } catch (e) {}
-}
-let savedTheme = "light";
-try { savedTheme = localStorage.getItem("bdcn-theme") || "light"; } catch (e) {}
-setTheme(savedTheme);
-themeToggle.addEventListener("click", () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));

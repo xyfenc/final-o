@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1930 1930" role="img" aria-labelledby="bdcn-title bdcn-description">
+  <title id="bdcn-title">BDCN logo</title>
+  <desc id="bdcn-description">A BDCN monogram formed by four overlapping circles and a central diamond.</desc>
+  <style>
+    :root {
+      --ring: #C85A48;
+      --fill: #18223D;
+      --fill-opacity: 0.06;
+      --letter: #18223D;
+      --accent: #E87A62;
+    }
+    .circle {
+      fill: var(--fill);
+      fill-opacity: var(--fill-opacity);
+      stroke: var(--ring);
+      stroke-width: 20;
+    }
+    .letter {
+      fill: var(--letter);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      font-size: 330px;
+      text-anchor: middle;
+    }
+    .gem {
+      fill: var(--accent);
+    }
+  </style>
+
+  <circle class="circle" cx="791" cy="790" r="437"/>
+  <circle class="circle" cx="1139" cy="790" r="437"/>
+  <circle class="circle" cx="791" cy="1140" r="437"/>
+  <circle class="circle" cx="1139" cy="1140" r="437"/>
+
+  <rect class="gem" x="873" y="873" width="184" height="184" transform="rotate(45 965 965)"/>
+
+  <text class="letter" x="590" y="715">C</text>
+  <text class="letter" x="1340" y="715">B</text>
+  <text class="letter" x="590" y="1445">D</text>
+  <text class="letter" x="1340" y="1445">N</text>
+</svg>
