@@ -35,7 +35,7 @@
             <div class="rail-intro"><strong>Explore</strong><p>Our organizational communication project</p></div>
             <nav aria-label="Main navigation">
                 <button class="nav-button active" data-page="home" aria-current="page">Home</button>
-                <button class="nav-button" data-page="org-chart">Org Chart</button>
+                <button class="nav-button" type="button" data-open-org-chart>Organizational Chart</button>
                 <button class="nav-button" data-page="theory">Theory</button>
                 <button class="nav-button" data-page="reflections">Reflections</button>
                 <button class="nav-button" data-page="company-details">Company Details</button>
@@ -50,7 +50,7 @@
                     <span class="section-label">Welcome / 00</span>
                     <h2>Welcome to <em>Project BDCN</em></h2>
                     <p>Welcome to our Organizational Communication project.</p>
-                    <button class="primary-button" data-page-link="org-chart">Explore our structure <span>↗</span></button>
+                    <button class="primary-button" type="button" data-open-org-chart>Explore our structure <span>↗</span></button>
                 </div>
                 <div class="video-card">
                     <div class="video-heading"><h3>Project introduction</h3></div>
@@ -58,22 +58,6 @@
                         <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw" title="Project BDCN Introduction Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <p class="video-note">Watch the Project BDCN introduction video.</p>
-                </div>
-            </section>
-
-            <section id="org-chart" class="content-card" data-page-panel hidden>
-                <button class="back-button" data-back>← Back to Home</button>
-                <span class="section-label">Section 01</span>
-                <h2 class="page-title">Organizational Chart</h2>
-                <p class="org-introduction">An organizational chart </p>
-                <div class="org-chart">
-                    <div class="org-ceo"><div class="org-node ceo"><strong>Yes</strong><span>yeah</span></div></div>
-                    <div class="org-connector"></div>
-                    <div class="manager-grid">
-                        <div class="team-group"><div class="org-node"><strong>P1</strong><span>P1-A</span></div><div class="staff-connector"></div><div class="staff-node"><strong>A</strong><br>DESCRIPTION</div></div>
-                        <div class="team-group"><div class="org-node"><strong>P2</strong><span>P2-B</span></div><div class="staff-connector"></div><div class="staff-node"><strong>B</strong><br>DESCRIPTION</div></div>
-                        <div class="team-group"><div class="org-node"><strong>P3</strong><span>P3-C</span></div><div class="staff-connector"></div><div class="staff-node"><strong>C</strong><br>DESCRIPTION</div></div>
-                    </div>
                 </div>
             </section>
 
@@ -122,6 +106,26 @@
                     <div class="contact-card"><h3>Contact Information</h3><div class="contact-item"><span class="contact-label">Address:</span><span>University of Makati, J.P. Rizal Extension, West Rembo, Makati City, Philippines</span></div><div class="contact-item"><span class="contact-label">Phone:</span><span>+63 912 345 6789</span></div><div class="contact-item"><span class="contact-label">Email:</span><span>projectbdcn@example.com</span></div></div>
                 </div>
             </section>
+
+            <dialog class="org-dialog" id="org-chart-dialog" aria-labelledby="org-chart-title">
+                <div class="org-dialog-heading">
+                    <div>
+                <span class="section-label">Section 01</span>
+                <h2 class="page-title" id="org-chart-title">Organizational Chart</h2>
+                    </div>
+                    <button class="org-dialog-close" type="button" data-close-org-chart aria-label="Close organizational chart">×</button>
+                </div>
+                <p class="org-introduction">An organizational chart </p>
+                <div class="org-chart">
+                    <div class="org-ceo"><div class="org-node ceo"><strong>Yes</strong><span>yeah</span></div></div>
+                    <div class="org-connector"></div>
+                    <div class="manager-grid">
+                        <div class="team-group"><div class="org-node"><strong>P1</strong><span>P1-A</span></div><div class="staff-connector"></div><div class="staff-node"><strong>A</strong><br>DESCRIPTION</div></div>
+                        <div class="team-group"><div class="org-node"><strong>P2</strong><span>P2-B</span></div><div class="staff-connector"></div><div class="staff-node"><strong>B</strong><br>DESCRIPTION</div></div>
+                        <div class="team-group"><div class="org-node"><strong>P3</strong><span>P3-C</span></div><div class="staff-connector"></div><div class="staff-node"><strong>C</strong><br>DESCRIPTION</div></div>
+                    </div>
+                </div>
+            </dialog>
         </main>
     </div>
 
