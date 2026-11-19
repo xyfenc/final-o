@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\CPMTools\\CPMTools\\CPMTools.csproj": {}
+    "c:\\Users\\user\\Desktop\\All CPM PROJECT\\hc\\cls\\final-o\\OOP\\CPMTools\\CPMTools\\CPMTools.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\CPMTools\\CPMTools\\CPMTools.csproj": {
+    "c:\\Users\\user\\Desktop\\All CPM PROJECT\\hc\\cls\\final-o\\OOP\\CPMTools\\CPMTools\\CPMTools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\CPMTools\\CPMTools\\CPMTools.csproj",
+        "projectUniqueName": "c:\\Users\\user\\Desktop\\All CPM PROJECT\\hc\\cls\\final-o\\OOP\\CPMTools\\CPMTools\\CPMTools.csproj",
         "projectName": "CPMTools",
-        "projectPath": "C:\\Users\\user\\source\\repos\\CPMTools\\CPMTools\\CPMTools.csproj",
+        "projectPath": "c:\\Users\\user\\Desktop\\All CPM PROJECT\\hc\\cls\\final-o\\OOP\\CPMTools\\CPMTools\\CPMTools.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\CPMTools\\CPMTools\\obj\\",
+        "outputPath": "c:\\Users\\user\\Desktop\\All CPM PROJECT\\hc\\cls\\final-o\\OOP\\CPMTools\\CPMTools\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
