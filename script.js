@@ -1,8 +1,9 @@
 // Built by xyfenc | github.com/xyfenc
-const navButtons = document.querySelectorAll(".nav-button");
+const navButtons = document.querySelectorAll(".nav-button[data-page]");
 const panels = document.querySelectorAll("[data-page-panel]");
 const main = document.querySelector(".main-content");
 const textBorder = document.querySelector(".text-border");
+const orgChartDialog = document.getElementById("org-chart-dialog");
 const ids = [...navButtons].map((b) => b.dataset.page);
 
 function updateTextBorder() {
@@ -28,6 +29,11 @@ function showPage(id, updateHash = true) {
 }
 
 navButtons.forEach((b) => b.addEventListener("click", () => showPage(b.dataset.page)));
+document.querySelectorAll("[data-open-org-chart]").forEach((b) => b.addEventListener("click", () => orgChartDialog.showModal()));
+document.querySelector("[data-close-org-chart]").addEventListener("click", () => orgChartDialog.close());
+orgChartDialog.addEventListener("click", (event) => {
+    if (event.target === orgChartDialog) orgChartDialog.close();
+});
 document.querySelectorAll("[data-back]").forEach((b) => b.addEventListener("click", () => showPage("home")));
 document.querySelectorAll("[data-page-link]").forEach((b) => b.addEventListener("click", () => showPage(b.dataset.pageLink)));
 window.addEventListener("popstate", () => showPage(location.hash.slice(1) || "home", false));
