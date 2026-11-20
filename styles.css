@@ -75,6 +75,23 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .org-dialog-close:hover{border-color:var(--coral);color:var(--coral-d)}
 .org-introduction{margin:18px 0 26px}
 .org-chart{padding:22px 0 4px;overflow-x:auto}
+.org-chart-reference{width:100%;min-width:680px;padding:18px 18px 20px;background:var(--paper)}
+.org-chart-header{text-align:center}
+.org-chart-header h3{color:var(--title);font-family:"Space Grotesk",sans-serif;font-size:clamp(38px,5vw,58px);line-height:.9;letter-spacing:-.06em}
+.org-chart-header p{margin-top:7px;color:var(--title);font-family:"Space Grotesk",sans-serif;font-size:clamp(19px,2.5vw,30px);font-weight:700;line-height:1.05}
+.org-chart-header span{display:block;margin-top:7px;color:var(--muted);font-size:14px}
+.org-chart-tree{width:min(760px,100%);margin:14px auto 0;text-align:center}
+.org-lead{width:calc(33.333% - 24px);min-width:0;margin:0 auto;border:1px solid var(--navy);border-radius:10px;overflow:hidden;background:var(--paper)}
+.org-lead-title{min-height:38px;padding:8px 6px;border-radius:9px 9px 0 0;background:var(--coral);color:#fff;font-size:15px;font-weight:700;line-height:1.15}
+.org-lead-name{min-height:38px;padding:7px 6px;color:var(--title);font-size:17px;font-weight:700}
+.org-manager-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:58px}
+.org-manager-grid::before{position:absolute;top:-35px;right:16.666%;left:16.666%;height:2px;background:var(--navy);content:""}
+.org-manager-grid::after{position:absolute;top:-58px;left:50%;width:2px;height:23px;background:var(--navy);content:""}
+.org-team-card{position:relative;width:calc(100% - 24px);min-width:0;margin:0 12px;border:1px solid var(--navy);border-radius:10px;background:var(--paper)}
+.org-team-card::before{position:absolute;top:-35px;left:50%;width:2px;height:35px;background:var(--navy);content:""}
+.org-team-title{min-height:38px;padding:8px 6px;border-radius:9px 9px 0 0;background:var(--coral);color:#fff;font-size:15px;font-weight:700;line-height:1.15}
+.org-team-name{min-height:38px;padding:7px 6px;color:var(--title);font-size:17px;font-weight:700}
+.org-team-description{position:relative;width:calc(100% - 16px);min-height:82px;margin:16px 8px 8px;padding:11px 8px;border:1px solid var(--line);border-radius:10px;background:var(--cream);color:var(--ink);font-size:13px;line-height:1.35}
 .org-ceo{display:flex;justify-content:center}
 .org-node{display:flex;min-width:175px;flex-direction:column;align-items:center;padding:16px 19px;border:1px solid #f1c0b5;border-radius:10px;background:#fff7f4;color:var(--title);text-align:center}
 .org-node strong{margin-bottom:4px;font-size:15px}

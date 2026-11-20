@@ -123,19 +123,42 @@
             <dialog class="org-dialog" id="org-chart-dialog" aria-labelledby="org-chart-title">
                 <div class="org-dialog-heading">
                     <div>
-                <span class="section-label">Section 01</span>
-                <h2 class="page-title" id="org-chart-title">Organizational Chart</h2>
+                        <span class="section-label">Section 01</span>
+                        <h2 class="page-title" id="org-chart-title">Organizational Chart</h2>
                     </div>
                     <button class="org-dialog-close" type="button" data-close-org-chart aria-label="Close organizational chart">×</button>
                 </div>
-                <p class="org-introduction">An organizational chart </p>
-                <div class="org-chart">
-                    <div class="org-ceo"><div class="org-node ceo"><strong>Yes</strong><span>yeah</span></div></div>
-                    <div class="org-connector"></div>
-                    <div class="manager-grid">
-                        <div class="team-group"><div class="org-node"><strong>P1</strong><span>P1-A</span></div><div class="staff-connector"></div><div class="staff-node"><strong>A</strong><br>DESCRIPTION</div></div>
-                        <div class="team-group"><div class="org-node"><strong>P2</strong><span>P2-B</span></div><div class="staff-connector"></div><div class="staff-node"><strong>B</strong><br>DESCRIPTION</div></div>
-                        <div class="team-group"><div class="org-node"><strong>P3</strong><span>P3-C</span></div><div class="staff-connector"></div><div class="staff-node"><strong>C</strong><br>DESCRIPTION</div></div>
+                <div class="org-chart-reference" aria-label="Project BDCN team-based organizational structure">
+                    <header class="org-chart-header">
+                        <h3>PROJECT BDCN</h3>
+                        <p>Team-Based Organizational Structure</p>
+                        <span>Flexible, skill-based groups working collaboratively under participative decision-making.</span>
+                    </header>
+
+                    <div class="org-chart-tree">
+                        <div class="org-lead">
+                            <div class="org-lead-title">Team Lead / Project Head</div>
+                            <div class="org-lead-name">Noora</div>
+                            <div class="org-team-description">Guides the group and makes sure<br>final decisions come from everyone's input.</div>
+                        </div>
+
+                        <div class="org-manager-grid">
+                            <article class="org-team-card">
+                                <div class="org-team-title">Communications Officer</div>
+                                <div class="org-team-name">Balmaceda</div>
+                                <div class="org-team-description">Keeps the discussion open<br>and makes sure everyone is<br>heard and informed.</div>
+                            </article>
+                            <article class="org-team-card">
+                                <div class="org-team-title">Creative Director</div>
+                                <div class="org-team-name">Cummins</div>
+                                <div class="org-team-description">Handles ideas, the video,<br>and the overall look of<br>the project.</div>
+                            </article>
+                            <article class="org-team-card">
+                                <div class="org-team-title">Operations Coordinator</div>
+                                <div class="org-team-name">Delcano</div>
+                                <div class="org-team-description">Keeps the group organized,<br>tracks tasks and deadlines,<br>and makes sure plans get done.</div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </dialog>
