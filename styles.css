@@ -193,3 +193,106 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 [data-theme="dark"] .theorist-image{background:#1d2742}
 [data-theme="dark"] .video-card{background:#1d2742}
 [data-theme="dark"] .back-button:hover{border-color:var(--coral);color:var(--coral-d)}
+
+/* ===== responsive improvements ===== */
+html,body{height:100dvh}
+.main-content{-webkit-overflow-scrolling:touch}
+
+@media(max-width:850px){
+.main-content{padding:32px clamp(18px,4vw,40px) 48px}
+.org-dialog{padding:22px}
+.reflection-container{gap:10px}
+.reflection-entry{min-height:0}
+.reflection-entry p{font-size:12px;line-height:1.45}
+.theory-layout{gap:16px}
+.about-grid{gap:14px}
+}
+
+@media(max-width:650px){
+:root{--head:64px;--foot:54px}
+.site-header{padding:0 10px;gap:8px}
+.brand-mark{width:44px;height:42px}
+.brand-mark-project{width:62px;height:48px}
+.brand-copy{min-width:0}
+.brand-copy h1{font-size:15px;letter-spacing:.06em}
+.brand-copy p{font-size:10px}
+
+.rail{padding:8px 10px}
+.rail nav{scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail nav::-webkit-scrollbar{display:none}
+.nav-button{padding:9px 13px;font-size:13px;border-radius:8px}
+
+.main-content{min-height:0;padding:20px 16px 36px}
+.main-content:has(#theory:not([hidden])),.main-content:has(#reflections:not([hidden])){padding:16px 16px 36px}
+.page-title{font-size:clamp(26px,8vw,34px);letter-spacing:-.03em}
+.page-subtitle,.org-introduction,.company-description{font-size:14.5px;line-height:1.65}
+.back-button{margin-bottom:16px;padding:8px 12px}
+
+/* home */
+.home-content{display:flex;flex-direction:column;align-items:stretch;gap:28px;padding:4px 6px 8px 0}
+.home-copy h2{font-size:clamp(32px,10vw,42px);margin:8px 0 12px}
+.home-copy>p{font-size:15px;max-width:none}
+.primary-button{margin-top:18px;padding:13px 18px}
+.video-card{padding:12px;border-radius:16px 16px 16px 4px}
+.video-heading h3{font-size:17px}
+
+/* org chart dialog: stack vertically */
+.org-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px);padding:16px;border-radius:10px}
+.org-dialog-heading{gap:10px}
+.org-introduction{margin:12px 0 18px}
+.org-chart-reference{min-width:0;padding:10px 0 4px}
+.org-chart-header h3{font-size:34px}
+.org-chart-header p{font-size:17px}
+.org-chart-header span{font-size:12.5px;line-height:1.4}
+.org-chart-tree{margin-top:18px}
+.org-lead,.org-team-card{width:100%;max-width:280px;margin-left:auto;margin-right:auto}
+.org-manager-grid{grid-template-columns:1fr;gap:35px;margin-top:44px}
+.org-manager-grid::before{display:none}
+.org-manager-grid::after{top:-44px;height:44px}
+.org-member-photo{width:96px;height:112px}
+.org-team-description br,.org-lead .org-team-description br{display:none}
+
+/* theory */
+.theory-layout{gap:14px}
+.theorist-image{max-width:200px;margin:0 auto;width:100%}
+.theorist-image img{height:200px}
+.text-section{padding-left:12px}
+.text-section h3{font-size:16px}
+.text-section p,.details-section p{font-size:14px;line-height:1.6}
+
+/* reflections */
+.reflection-container{grid-template-columns:1fr;gap:10px}
+.reflection-entry{min-height:0;padding:12px 14px 12px 54px}
+.entry-number{font-size:24px;top:11px;left:12px}
+.reflection-entry h3{font-size:15px}
+.reflection-entry p{font-size:13px;line-height:1.5}
+.reflection-author{font-size:12px;margin-top:8px}
+
+/* company details + about */
+.details-section{margin-top:16px;padding:16px}
+.team-card,.contact-card{padding:16px}
+.contact-item{flex-direction:column;gap:2px}
+.team-list li{padding:10px 12px;font-size:13.5px}
+
+/* footer */
+.site-footer{padding:0 12px;font-size:10.5px;line-height:1.35}
+.site-footer span{margin:0 4px}
+}
+
+@media(max-width:380px){
+.brand-mark{width:38px}
+.brand-mark-project{width:52px}
+.brand-copy h1{font-size:13.5px}
+.brand-copy p{display:none}
+.nav-button{padding:8px 11px;font-size:12.5px}
+.org-chart-header h3{font-size:30px}
+}
+
+/* short landscape phones */
+@media(max-height:480px) and (orientation:landscape){
+:root{--head:54px;--foot:30px}
+.brand-mark{height:36px}
+.brand-mark-project{height:40px}
+.site-footer{font-size:10px}
+.org-dialog{max-height:calc(100dvh - 12px)}
+}
