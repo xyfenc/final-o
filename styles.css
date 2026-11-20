@@ -83,6 +83,7 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .org-chart-tree{width:min(760px,100%);margin:14px auto 0;text-align:center}
 .org-lead{width:calc(33.333% - 24px);min-width:0;margin:0 auto;border:1px solid var(--navy);border-radius:10px;overflow:hidden;background:var(--paper)}
 .org-lead-title{min-height:38px;padding:8px 6px;border-radius:9px 9px 0 0;background:var(--coral);color:#fff;font-size:15px;font-weight:700;line-height:1.15}
+.org-member-photo{display:block;width:104px;height:120px;margin:12px auto 0;border-radius:8px;object-fit:cover;object-position:center 25%}
 .org-lead-name{min-height:38px;padding:7px 6px;color:var(--title);font-size:17px;font-weight:700}
 .org-manager-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:58px}
 .org-manager-grid::before{position:absolute;top:-35px;right:16.666%;left:16.666%;height:2px;background:var(--navy);content:""}
@@ -108,22 +109,27 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .staff-node strong{color:var(--title)}
 
 /* theory */
-.theory-layout{display:grid;grid-template-columns:230px 1fr;gap:34px;margin-top:30px;align-items:start}
+.theory-layout{display:grid;grid-template-columns:190px 1fr;gap:24px;margin-top:16px;align-items:start}
 .theorist-image{overflow:hidden;border-radius:12px;background:#eee8df;position:sticky;top:0}
-.theorist-image img{display:block;width:100%;height:290px;object-fit:cover}
-.theorist-caption{padding:10px;color:var(--muted);font-size:12px;text-align:center}
-.theory-text{display:flex;flex-direction:column;gap:28px}
-.text-section h3,.details-section h3,.team-card h3,.contact-card h3{margin-bottom:8px;color:var(--title);font-size:21px}
-.text-section{padding-left:20px;border-left:3px solid var(--coral)}
-.text-section p,.details-section p{max-width:68ch;color:var(--muted);font-size:15px;line-height:1.8}
+.theorist-image img{display:block;width:100%;height:220px;object-fit:cover}
+.theorist-caption{padding:7px;color:var(--muted);font-size:11px;text-align:center}
+.theory-text{display:flex;flex-direction:column;gap:12px}
+.text-section h3,.details-section h3,.team-card h3,.contact-card h3{margin-bottom:5px;color:var(--title);font-size:18px}
+.text-section{padding-left:14px;border-left:3px solid var(--coral)}
+.text-section p,.details-section p{max-width:68ch;color:var(--muted);font-size:13px;line-height:1.55}
 
 /* reflections */
-.reflection-container{margin-top:28px}
-.reflection-entry{position:relative;padding:26px 0 26px 78px;border-top:1px solid var(--line)}
-.entry-number{position:absolute;top:22px;left:0;color:var(--coral);font:700 40px "Space Grotesk",sans-serif;line-height:1}
-.reflection-entry h3{margin-bottom:8px;color:var(--title);font-size:20px}
-.reflection-entry p{color:var(--muted);font-size:15px;line-height:1.8}
-.reflection-author{display:block;margin-top:12px;color:var(--coral-d);font-size:13px;font-style:italic}
+.reflection-container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
+.reflection-entry{position:relative;min-height:150px;padding:10px 12px 10px 48px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+.entry-number{position:absolute;top:9px;left:10px;color:var(--coral);font:700 25px "Space Grotesk",sans-serif;line-height:1}
+.reflection-entry h3{margin-bottom:3px;color:var(--title);font-size:14px}
+.reflection-entry p{color:var(--muted);font-size:11px;line-height:1.32}
+.reflection-author{display:block;margin-top:5px;color:var(--coral-d);font-size:10px;font-style:italic}
+
+#theory .back-button,#reflections .back-button{margin-bottom:12px}
+#theory .page-title,#reflections .page-title{margin:4px 0 6px;font-size:clamp(28px,3.8vw,44px)}
+#theory .page-subtitle,#reflections .page-subtitle{font-size:14px;line-height:1.45}
+.main-content:has(#theory:not([hidden])),.main-content:has(#reflections:not([hidden])){padding-top:18px;padding-bottom:18px}
 
 /* company details */
 .details-section{margin-top:26px;padding:22px 24px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
@@ -158,6 +164,8 @@ h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
 .nav-button{width:auto;padding:10px 14px;white-space:nowrap;font-size:13px}
 .main-content{flex:1;padding:22px 16px 40px}
 .about-grid{grid-template-columns:1fr}
+.reflection-container{grid-template-columns:1fr}
+.reflection-container::after{display:none}
 .reflection-entry{padding-left:58px}
 .details-section:nth-of-type(2){margin-left:0}
 .home-content{min-height:0}
